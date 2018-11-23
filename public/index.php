@@ -1,10 +1,20 @@
 <?php
 require_once "../vendor/autoload.php";
 
-$db = Container::getConn();
+use Pimple\Container;
 
-$product = Container::getProduct();
+$container = new Container();
 
-$list = $product->list();
+$container['date'] = function(){
+  return new \DateTime;
+};
 
-var_dump($list);
+var_dump($container['date']);
+
+// $db = Container::getConn();
+
+// $product = Container::getProduct();
+
+// $list = $product->list();
+
+// var_dump($list);
