@@ -14,7 +14,8 @@ class Conn implements IConn
     $this->pass = $pass;
   }
 
-  public function connect(){
+  public function connect()
+  {
     return new \PDO($this->dsn, $this->user, $this->pass);
   }
 }
